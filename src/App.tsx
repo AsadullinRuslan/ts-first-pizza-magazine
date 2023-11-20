@@ -1,13 +1,22 @@
-import React from 'react';
-import './App.css';
+import React, { FC, useEffect, useState } from "react";
+import "./App.css";
 
+import HomePage from "./pages/HomePage";
+import PizzaPage from "./pages/PizzaPage";
+import { Route, Routes } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      New App!
-    </div>
-  );
-}
+const App: FC = () => {
+
+    return (
+        <div className="App">
+            <div className="wrap">
+                <Routes>
+                    <Route path='/' element={<HomePage />} />
+                    <Route path='/pizza/:id' element={<PizzaPage />} />
+                </Routes>
+            </div>
+        </div>
+    );
+};
 
 export default App;
